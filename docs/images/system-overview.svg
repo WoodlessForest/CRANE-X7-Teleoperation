@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="850" viewBox="0 0 1440 850" role="img" aria-labelledby="title desc">
+<title id="title">CRANE-X7 teleoperation system overview</title>
+<desc id="desc">ZED stereo camera and optional robot arms connect to a Linux computer. A Quest headset uses ADB reverse for TCP ports 8080 and 8765, and the same Wi-Fi network for default WebRTC video. Hand poses return to the computer. WebSocket video is a fallback. Robot control is disabled by default.</desc>
+<rect width="1440" height="850" fill="#f4f7fb"/>
+<text x="48" y="64" font-family="DejaVu Sans,Arial,sans-serif" font-size="32" font-weight="700" fill="#1c2a42">CRANE-X7 TELEOPERATION</text>
+<text x="49" y="102" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#56657b">System overview  /  Recommended Quest connection</text>
+<rect x="48" y="142" width="292" height="204" rx="18" fill="#ffffff" stroke="#d8e1ed" stroke-width="2"/>
+<text x="70" y="177" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#3267d6">STEREO CAMERA</text>
+<rect x="70" y="202" width="74" height="43" rx="8" fill="#eaf0fc" stroke="#b9cbec" stroke-width="2"/>
+<circle cx="90" cy="224" r="9" fill="#3267d6"/>
+<circle cx="124" cy="224" r="9" fill="#3267d6"/>
+<text x="70" y="288" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#1c2a42">ZED Mini</text>
+<text x="70" y="319" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="400" fill="#56657b">UVC stereo capture</text>
+<rect x="48" y="428" width="292" height="228" rx="18" fill="#ffffff" stroke="#d8e1ed" stroke-width="2"/>
+<text x="70" y="464" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#138575">ROBOT ARMS</text>
+<text x="70" y="512" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#1c2a42">CRANE-X7</text>
+<text x="70" y="548" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#1c2a42">One or two arms</text>
+<text x="70" y="579" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="400" fill="#56657b">Joint + gripper control</text>
+<rect x="70" y="601" width="244" height="33" rx="8" fill="#e8f5f1" stroke="#c3e5db" stroke-width="2"/>
+<text x="82" y="621" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#106b5c">Optional: --with_arms</text>
+<rect x="444" y="142" width="390" height="514" rx="18" fill="#ffffff" stroke="#b9cbec" stroke-width="2"/>
+<text x="470" y="177" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#3267d6">LINUX COMPUTER</text>
+<text x="470" y="227" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="#1c2a42">Python runtime</text>
+<text x="470" y="264" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="400" fill="#1c2a42">Capture + stereo rectification</text>
+<text x="470" y="295" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="400" fill="#1c2a42">Vuer UI + video streaming</text>
+<text x="470" y="326" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="400" fill="#1c2a42">Relative wrist pose mapping</text>
+<rect x="470" y="360" width="338" height="94" rx="12" fill="#edf3ff" stroke="#d6e2f8" stroke-width="2"/>
+<text x="490" y="394" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#1c2a42">py_x7  /  C++</text>
+<text x="490" y="426" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="400" fill="#1c2a42">Inverse kinematics + serial I/O</text>
+<text x="470" y="513" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="700" fill="#1c2a42">Recording + replay</text>
+<text x="470" y="545" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="400" fill="#56657b">Images, actions and timestamps</text>
+<rect x="470" y="581" width="338" height="47" rx="10" fill="#f4f7fb" stroke="#e0e6ef" stroke-width="2"/>
+<text x="488" y="609" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#1c2a42">Default: video only, arms disabled</text>
+<polyline points="340,240 444,240" fill="none" stroke="#3267d6" stroke-width="4"/>
+<polygon points="444.0,240.0 432.3,245.7 432.3,234.3" fill="#3267d6"/>
+<text x="354" y="218" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#3267d6">USB</text>
+<polyline points="444,535 340,535" fill="none" stroke="#138575" stroke-width="4"/>
+<polygon points="340.0,535.0 351.7,529.3 351.7,540.7" fill="#138575"/>
+<polygon points="444.0,535.0 432.3,540.7 432.3,529.3" fill="#138575"/>
+<text x="350" y="504" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#138575">USB</text>
+<text x="348" y="526" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="400" fill="#138575">serial</text>
+<rect x="1128" y="142" width="264" height="514" rx="18" fill="#ffffff" stroke="#d8e1ed" stroke-width="2"/>
+<text x="1150" y="177" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#3267d6">META QUEST</text>
+<rect x="1163" y="215" width="186" height="85" rx="25" fill="#edf3ff" stroke="#b9cbec" stroke-width="2"/>
+<rect x="1182" y="234" width="62" height="38" rx="10" fill="#ffffff" stroke="#b9cbec" stroke-width="2"/>
+<rect x="1267" y="234" width="62" height="38" rx="10" fill="#ffffff" stroke="#b9cbec" stroke-width="2"/>
+<text x="1150" y="364" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="#1c2a42">Quest browser</text>
+<text x="1150" y="403" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#1c2a42">Stereo VR view</text>
+<text x="1150" y="435" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="400" fill="#1c2a42">WebXR hand tracking</text>
+<text x="1150" y="516" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="400" fill="#56657b">Open on the headset:</text>
+<text x="1150" y="548" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="700" fill="#3267d6">http://localhost:8765</text>
+<text x="1150" y="608" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="700" fill="#1c2a42">Enter VR</text>
+<text x="1150" y="636" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="400" fill="#56657b">Allow hand tracking</text>
+<polyline points="834,250 1128,250" fill="none" stroke="#3267d6" stroke-width="4"/>
+<polygon points="1128.0,250.0 1116.3,255.7 1116.3,244.3" fill="#3267d6"/>
+<text x="856" y="206" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="700" fill="#3267d6">WebRTC video</text>
+<text x="856" y="233" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="400" fill="#56657b">UDP / same Wi-Fi</text>
+<polyline points="834,397 1128,397" fill="none" stroke="#138575" stroke-width="4"/>
+<polygon points="1128.0,397.0 1116.3,402.7 1116.3,391.3" fill="#138575"/>
+<polygon points="834.0,397.0 845.7,391.3 845.7,402.7" fill="#138575"/>
+<text x="856" y="326" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="700" fill="#138575">ADB reverse / USB</text>
+<text x="856" y="357" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="400" fill="#56657b">TCP 8080: signaling</text>
+<text x="856" y="382" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="400" fill="#56657b">TCP 8765: UI + hands</text>
+<text x="856" y="473" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="#1c2a42">Fallback: WebSocket</text>
+<text x="856" y="502" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="400" fill="#56657b">JPEG video over TCP 8765</text>
+<rect x="48" y="701" width="1344" height="108" rx="16" fill="#192c49" stroke="#192c49" stroke-width="2"/>
+<text x="72" y="734" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" font-weight="700" fill="#9cbbf5">BEFORE LAUNCH</text>
+<text x="72" y="772" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#ffffff">adb reverse tcp:8080 tcp:8080</text>
+<text x="530" y="772" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#ffffff">adb reverse tcp:8765 tcp:8765</text>
+<text x="1018" y="740" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff">PC + Quest: same Wi-Fi</text>
+<text x="1018" y="773" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="400" fill="#c3d2e9">Port forwarding is manual.</text>
+</svg>

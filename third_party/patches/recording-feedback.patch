@@ -1,0 +1,85 @@
+--- a/rt_manipulators_lib/include/hardware.hpp
++++ b/rt_manipulators_lib/include/hardware.hpp
+@@ -27,0 +28 @@
++#include "recording_feedback.hpp"
+@@ -51,0 +53,5 @@
++  // Enable before load_config_file/start_thread; adds no serial reads.
++  void enable_recording_feedback() { recording_feedback_ = std::make_unique<RecordingFeedback>(); }
++  PositionFeedback recording_position_snapshot(const std::string& group) const {
++    return recording_feedback_ ? recording_feedback_->snapshot(group) : PositionFeedback{};
++  }
+@@ -101,0 +108 @@
++  std::unique_ptr<RecordingFeedback> recording_feedback_;
+--- /dev/null
++++ b/rt_manipulators_lib/include/recording_feedback.hpp
+@@ -0,0 +1,44 @@
++#pragma once
++#include <cstdint>
++#include <map>
++#include <mutex>
++#include <string>
++#include <vector>
++namespace rt_manipulators_cpp {
++struct PositionFeedback {
++  bool enabled = false, updated = false, last_read_ok = false;
++  int64_t update_ns = 0, attempt_ns = 0;
++  uint64_t sequence = 0;
++  std::vector<double> positions;
++};
++// Separate from Joint's caches. No lock is held over serial IO.
++class RecordingFeedback {
++ public:
++  void configure(const std::string& group, bool enabled) {
++    std::lock_guard<std::mutex> lock(mutex_);
++    groups_[group] = PositionFeedback{};
++    groups_[group].enabled = enabled;
++  }
++  void publish(const std::string& group, bool ok,
++               const std::vector<double>& positions, int64_t time_ns) {
++    std::lock_guard<std::mutex> lock(mutex_);
++    auto& f = groups_.at(group);
++    f.attempt_ns = time_ns;
++    f.last_read_ok = ok && f.enabled;
++    if (f.last_read_ok) {
++      f.positions = positions;
++      f.update_ns = time_ns;
++      ++f.sequence;
++      f.updated = true;
++    }
++  }
++  PositionFeedback snapshot(const std::string& group) const {
++    std::lock_guard<std::mutex> lock(mutex_);
++    auto it = groups_.find(group);
++    return it == groups_.end() ? PositionFeedback{} : it->second;
++  }
++ private:
++  mutable std::mutex mutex_;
++  std::map<std::string, PositionFeedback> groups_;
++};
++}
+--- a/rt_manipulators_lib/src/hardware.cpp
++++ b/rt_manipulators_lib/src/hardware.cpp
+@@ -17,0 +18 @@
++#include <time.h>
+@@ -45,0 +47,2 @@
++    if (recording_feedback_)
++      recording_feedback_->configure(group_name, group->sync_read_position_enabled());
+@@ -179,0 +183,5 @@
++    if (recording_feedback_) {
++      timespec ts{}; clock_gettime(CLOCK_MONOTONIC, &ts);
++      recording_feedback_->publish(group_name, false, {},
++        int64_t(ts.tv_sec) * 1000000000LL + ts.tv_nsec);
++    }
+@@ -183,0 +192,2 @@
++  bool position_ok = true;
++  std::vector<double> recorded_positions;
+@@ -189,0 +200 @@
++        if (recording_feedback_) recorded_positions.push_back(position);
+@@ -190,0 +202 @@
++        position_ok = false;
+@@ -196,0 +209,5 @@
++  if (recording_feedback_) {
++    timespec ts{}; clock_gettime(CLOCK_MONOTONIC, &ts);
++    recording_feedback_->publish(group_name, position_ok, recorded_positions,
++      int64_t(ts.tv_sec) * 1000000000LL + ts.tv_nsec);
++  }

@@ -1,0 +1,15 @@
+[
+  {
+    "directory": "DynamixelSDK",
+    "repository": "ROBOTIS-GIT/DynamixelSDK",
+    "commit": "54cabbf8e6c38fac205bc4dd14e747dd0e32e56f",
+    "sha256": "bf5d6433c6551461f45838bcf70ea101e60d23dedd38c4c2075ca1e63c5b55c2"
+  },
+  {
+    "directory": "rt_manipulators_lib",
+    "repository": "rt-net/rt_manipulators_cpp",
+    "commit": "faa425914005b557feb57dce84d42766c7e33d6b",
+    "sha256": "29094838fb67218ab6e2ab5415f2f3129641a4942d612134701709af7c2ea751",
+    "patch": "third_party/patches/recording-feedback.patch"
+  }
+]

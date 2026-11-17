@@ -1,0 +1,13 @@
+numpy==2.5.1
+opencv-python-headless==5.0.0.93
+
+vuer[all]==0.0.61
+params-proto==2.13.2
+
+aiohttp==3.10.5
+aiohttp-cors==0.8.1
+aiortc==1.15.0
+
+av==17.1.0
+
+pybind11==3.0.3

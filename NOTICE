@@ -1,0 +1,40 @@
+CRANE-X7 Teleoperation
+
+Project contributions are licensed under the Apache License, Version 2.0.
+Upstream copyright notices and licenses remain applicable to their material.
+
+RT Corporation
+Copyright 2021 RT Corporation <support@rt-net.jp>
+Copyright 2022 RT Corporation (samples03 inverse kinematics)
+Additional per-file copyright years are retained in downloaded upstream sources.
+
+cpp/src/rt_manipulators_ik.cpp and cpp/include/rt_manipulators_ik.hpp reuse and
+adapt samples/samples03 inverse-kinematics code from rt_manipulators_cpp.
+cpp/src/x7_controller.cpp combines that solver with project-specific wrist
+orientation decomposition, branch selection, continuity handling and command
+submission. cpp/config/ contains CRANE-X7 model/configuration material derived
+from the RT sample configuration.
+
+The downloaded rt_manipulators_lib is modified by
+third_party/patches/recording-feedback.patch: hardware.hpp, hardware.cpp and the
+new recording_feedback.hpp provide timestamped position feedback for recording.
+These files are modified versions, not an unmodified upstream distribution.
+
+OpenTeleVision
+Copyright [2024] [Xuxin Cheng, Jialong Li, Shiqi Yang, Ge Yang and Xiaolong Wang]
+
+The Python teleoperation layer is adapted from OpenTeleVision/TeleVision,
+particularly TeleVision.py and the preprocessing/streaming workflow. Project
+changes include CRANE-X7 relative wrist control, Vuer payload decoding, UVC
+capture/rectification, bounded video transport, recording and action replay.
+It is not an unmodified distribution of OpenTeleVision.
+
+OpenTeleVision's original LICENSE, including acknowledgments of ACT, DETR,
+dex-retargeting and Vuer, is reproduced in licenses/OpenTeleVision-LICENSE.txt.
+
+ROBOTIS DynamixelSDK
+Copyright ROBOTIS CO., LTD. Per-file notices remain in downloaded source files.
+See licenses/DynamixelSDK-LICENSE.txt and the SDK's original source headers.
+
+Sources, pinned versions and the upstream OpenTeleVision citation are recorded
+in THIRD_PARTY_NOTICES.md. Trademarks and product names belong to their owners.
